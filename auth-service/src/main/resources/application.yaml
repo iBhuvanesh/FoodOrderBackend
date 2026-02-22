@@ -1,0 +1,25 @@
+
+server:
+  port: 8889
+
+spring:
+  application:
+    name: auth-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/smartfood
+    username: root
+    password: Charanraj@02
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: 7fa70d5342d655fa06802b9ce9edee1f29d7ad71dqwfaegsrhdtjfyiyhtgrfetyrjthetetyuimjnhbgvfrcetyuiyt
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

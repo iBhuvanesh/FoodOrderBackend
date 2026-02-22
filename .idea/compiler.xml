@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="UserServiceApplication" />
+        <module name="api-gateway1" />
+      </profile>
+      <profile name="Annotation profile for smartfood-parent" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="auth-service" />
+        <module name="cart-service" />
+        <module name="DiscoveryServerApplication" />
+        <module name="restaurant-service" />
+        <module name="order-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="discovery-server" target="17" />
+      <module name="smartfood-parent (1)" target="1.5" />
+      <module name="smartfood-parent (2)" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="DiscoveryServerApplication" options="" />
+      <module name="UserServiceApplication" options="" />
+      <module name="cart-service" options="" />
+      <module name="discovery-server" options="-parameters" />
+      <module name="order-service" options="" />
+      <module name="restaurant-service" options="" />
+    </option>
+  </component>
+</project>
