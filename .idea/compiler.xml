@@ -20,8 +20,8 @@
         <module name="auth-service" />
         <module name="cart-service" />
         <module name="DiscoveryServerApplication" />
-        <module name="restaurant-service" />
         <module name="order-service" />
+        <module name="restaurant-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

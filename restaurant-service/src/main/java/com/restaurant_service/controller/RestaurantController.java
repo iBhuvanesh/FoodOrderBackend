@@ -1,15 +1,14 @@
 package com.restaurant_service.controller;
 
 
-import com.restaurant_service.service.RestaurantService;
-
+import com.restaurant_service.dto.MenuItemRequest;
+import com.restaurant_service.dto.MenuItemResponse;
 import com.restaurant_service.dto.RestaurantRequest;
 import com.restaurant_service.dto.RestaurantResponse;
+import com.restaurant_service.service.RestaurantService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
-
-import com.restaurant_service.dto.*;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -51,5 +50,18 @@ public class RestaurantController {
     public MenuItemResponse getMenuItemById(
             @PathVariable("menuItemId") Long menuItemId) {
         return service.getMenuItemById(menuItemId);
+    }
+    @PatchMapping("/{id}/menu/{menuItemId}")
+    public MenuItemResponse updateMenuItem(@PathVariable("id") Long restaurantId,
+                                           @PathVariable("menuItemId") Long menuItemId,
+                                           @RequestBody MenuItemRequest request) {
+        return service.updateMenuItem(restaurantId, menuItemId, request);
+    }
+
+    @DeleteMapping("/{id}/menu/{menuItemId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteMenuItem(@PathVariable("id") Long restaurantId,
+                               @PathVariable("menuItemId") Long menuItemId) {
+        service.deleteMenuItem(restaurantId, menuItemId);
     }
 }

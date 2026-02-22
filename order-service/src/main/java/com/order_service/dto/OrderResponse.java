@@ -1,6 +1,5 @@
 package com.order_service.dto;
 
-import com.order_service.entity.OrderStatus;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -20,7 +19,4 @@ public class OrderResponse {
     private String status;
     private LocalDateTime createdAt;
     private List<OrderItemResponse> items;
-
-    public OrderResponse(Long id, Long userId, OrderStatus status, Double totalAmount, LocalDateTime createdAt) {
-    }
 }

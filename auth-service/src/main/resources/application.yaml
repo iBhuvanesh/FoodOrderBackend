@@ -19,6 +19,9 @@ spring:
 jwt:
   secret: 7fa70d5342d655fa06802b9ce9edee1f29d7ad71dqwfaegsrhdtjfyiyhtgrfetyrjthetetyuimjnhbgvfrcetyuiyt
 
+user-service:
+  url: http://localhost:8086
+
 eureka:
   client:
     service-url:

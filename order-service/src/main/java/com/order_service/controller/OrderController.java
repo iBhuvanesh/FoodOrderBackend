@@ -29,13 +29,13 @@ public class OrderController {
     }
 
     @GetMapping("/user/{userId}")
-    public List<OrderResponse> getUserOrders(@PathVariable Long userId) {
+    public List<OrderResponse> getUserOrders(@PathVariable("userId") Long userId) {
         return service.getUserOrders(userId);
     }
 
     // ✅ FIXED — Removed @PreAuthorize (gateway handles role auth, not microservice)
     @PutMapping("/{orderId}/status")
-    public OrderResponse updateStatus(@PathVariable Long orderId,
+    public OrderResponse updateStatus(@PathVariable("orderId") Long orderId,
                                       @RequestParam OrderStatus status) {
         return service.updateStatus(orderId, status);
     }

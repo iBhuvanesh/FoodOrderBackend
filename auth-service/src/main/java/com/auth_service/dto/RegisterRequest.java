@@ -9,7 +9,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RegisterRequest {
-
+    private String name;
+    private String phone;
     private String email;
     private String password;
     private String role; // ROLE_USER / ROLE_RESTAURANT_ADMIN
